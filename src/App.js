@@ -1,23 +1,28 @@
 import { registerRootComponent } from 'expo';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Experience0 from './pages/Experience0';
+import Experience1 from './pages/Experience1';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Stack = createNativeStackNavigator();
 
 export function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Experience 0"
+          component={Experience0}
+          options={{ title: 'Experience 0' }}
+        />
+        <Stack.Screen
+          name="Experience 1"
+          component={Experience1}
+          options={{ title: 'Experience 1' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
