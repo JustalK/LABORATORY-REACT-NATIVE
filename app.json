@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Do you know me?",
+    "slug": "DO-YOU-KNOW-ME",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#111116"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+	"assetBundlePatterns": [
+      "assets/**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.justalk.example"
+    },
+	"android": {
+      "package": "com.justalk.example",
+      "versionCode": 2,
+	  "permissions": [],
+      "adaptiveIcon": {
+        "backgroundColor": "#111116"
+      }
+    }
+  }
+}
