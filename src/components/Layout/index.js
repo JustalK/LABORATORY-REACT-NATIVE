@@ -6,6 +6,7 @@ const Layout = ({ children, navigation }) => (
     <View style={styles.navigation}>
       <Button title="Experience 0" onPress={() => navigation.navigate('Experience 0')} />
       <Button title="Experience 1" onPress={() => navigation.navigate('Experience 1')} />
+      <Button title="Experience 2" onPress={() => navigation.navigate('Experience 2')} />
     </View>
     <View style={styles.content}>{children}</View>
   </View>
