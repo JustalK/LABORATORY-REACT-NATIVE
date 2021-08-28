@@ -1,12 +1,11 @@
 import React from 'react';
-import { Text, Button } from 'react-native';
+import { Text } from 'react-native';
+import Layout from 'src/components/Layout';
 
 const Experience = ({ navigation }) => (
-  <>
-    <Button title="Experience 1" onPress={() => navigation.navigate('Experience 1')} />
-    <Button title="Experience 1" onPress={() => navigation.navigate('Experience 1')} />
+  <Layout navigation={navigation}>
     <Text>Experience 2</Text>
-  </>
+  </Layout>
 );
 
 export default Experience;
