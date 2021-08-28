@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { Button, SafeAreaView, Text, StyleSheet, ScrollView, ActivityIndicator, FlatList, Image } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { Button, SafeAreaView, Text, StyleSheet, ScrollView, ActivityIndicator, FlatList, Image, TextInput, Switch } from 'react-native';
 import Layout from 'src/components/Layout';
 
 const Experience = () => {
+  const input = useRef();
+  const [isEnabled, setIsEnabled] = useState(false);
   const [data, setData] = useState([
     {
       title: 'First Item',
@@ -14,6 +16,10 @@ const Experience = () => {
       title: 'Third Item',
     },
   ]);
+
+  const onChangeText = (e) => {
+    console.log(e);
+  };
 
   return (
     <Layout>
@@ -35,6 +41,15 @@ const Experience = () => {
             source={{
               uri: 'https://reactnative.dev/img/tiny_logo.png',
             }}
+          />
+          <TextInput onChangeText={onChangeText} ref={input} placeholder="PLACEHOLDER" numberOfLines={2} />
+          <Button title="Value of input" onPress={() => console.log(input.current.value)} />
+          <Switch
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+            thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={() => setIsEnabled(true)}
+            value={isEnabled}
           />
         </ScrollView>
       </SafeAreaView>
